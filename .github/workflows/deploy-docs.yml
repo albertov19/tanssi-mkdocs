@@ -59,7 +59,7 @@ jobs:
 
       - name: Replace `/assets` with `assets`
         run: |
-          find . -type f -exec sed -i 's|/assets|assets|g' {} +
+          find . -type f -exec sed -i 's|/assets|/tanssi-mkdocs/assets|g' {} +
       
       - name: Deploy Docs
         run: mkdocs gh-deploy --force --clean --site-dir ./site
