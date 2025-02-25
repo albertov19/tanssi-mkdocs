@@ -59,7 +59,7 @@ jobs:
 
       - name: Replace `/assets` with `assets`
         run: |
-          find material-overrides -type f -name "*.html" -exec sed -i -e 's|/assets|/tanssi-mkdocs/assets|g' {} \;
+          find material-overrides -type f -name "*.html" -exec sed -i -e 's|"/assets|"/tanssi-mkdocs/assets|g' {} \;
       
       - name: Deploy Docs
         run: mkdocs gh-deploy --force --clean --site-dir ./site
