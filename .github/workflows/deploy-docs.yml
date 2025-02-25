@@ -56,7 +56,7 @@ jobs:
         run: |
           # Replace image/asset paths with new paths in Markdown/HTML files
           find tanssi-docs -type f -name "*.md" -exec sed -i -e 's|](/|](/tanssi-mkdocs/|g' -e 's|href="/|href="/tanssi-mkdocs/|g' {} \;
-          find material-overrides -type f -name "*.html" -exec sed -i -e 's|/assets|/tanssi-mkdocs/assets|g' {} \;
+          find material-overrides -type f -name "*.html" -exec sed -i -e 's|/assets|/assets|g' {} \;
       
       - name: Deploy Docs
         run: mkdocs gh-deploy --force --clean --site-dir ./site
